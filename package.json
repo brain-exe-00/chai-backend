@@ -1,0 +1,12 @@
+{
+  "name": "chai-backend",
+  "version": "1.0.0",
+  "description": "A vedio Series on Chai aur Code youtube  channel",
+  "license": "ISC",
+  "author": "Anonymous",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
