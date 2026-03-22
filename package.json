@@ -4,9 +4,12 @@
   "description": "A vedio Series on Chai aur Code youtube  channel",
   "license": "ISC",
   "author": "Anonymous",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
