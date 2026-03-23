@@ -1,6 +1,6 @@
 import mongoose , {Schema} from "mongoose";
 import bcrypt from "bcrypt";
-import { JsonWebTokenError } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 const userSchema = new Schema(
     {
@@ -53,7 +53,7 @@ const userSchema = new Schema(
 
 userSchema.pre("save" , async function(next){
     if(!this.Modified("password")) return next();
-    //password encryption
+    //password encryption just before code runs ...Data save hone se pahile use karo
     this.password = bcrypt.hash(this.password , 10)
     next()
 })
