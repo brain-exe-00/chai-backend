@@ -8,14 +8,17 @@ app.use(cors({
     origin:process.env.CORS_ORIGIN,
     credentials: true
 }))
-
 app.use(express.json({limit: "16kb"}))
-
 app.use(express.urlencoded({extended: true , limit: "16kb"})) //extented =>nested obj can be given
-
 app.use(express.static("public")) //images ,favicon 
-
 app.use(cookieParser())
 
+// routes Import
+import userRouter from './routes/user.routes.js'
 
-export {app}
+// routes decleration
+//uses middleware .....control==>>/user =>calls userRouter ==>> user.routes.js
+app.use("/api/v1/users" , userRouter)
+//http:localhost:8000/api/v1/user/register
+
+export { app }
