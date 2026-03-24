@@ -60,7 +60,7 @@ userSchema.pre("save" , async function(next){
 
 //we can eject/create our own methods...custom methods''''
 userSchema.methods.isPasswordCorrect = async function(password){
-    return await  bcrypt.compare(password , this.password)
+    return await bcrypt.compare(password , this.password)
     // bcrypt checks password "compares password"__true or false
 }
 
@@ -95,7 +95,7 @@ userSchema.methods.generateRefreshToken = function(){
 
 
 
-export const User = mongoose.models("User" , userSchema)
+export const User = mongoose.model("User" , userSchema)
 
 
 
