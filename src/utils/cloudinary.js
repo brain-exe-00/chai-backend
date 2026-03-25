@@ -1,6 +1,7 @@
 // npm i cloudinary
 
 import { v2 as cloudinary } from 'cloudinary';
+import fs from 'fs'
 
         // Configuration
         cloudinary.config({ 
@@ -18,6 +19,7 @@ import { v2 as cloudinary } from 'cloudinary';
                 })
                 //file has been uploaded successfully
                 console.log("File is uploaded on Cloudinary", response.url);
+                fs.unlinkSync(localFilePath)
                 return response;
 
             } catch (error) {

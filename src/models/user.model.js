@@ -36,7 +36,7 @@ const userSchema = new Schema(
         watchHistory: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "Vedio"
+                ref: "Video"
             }
         ],
         password: { //challenge to compare
@@ -52,10 +52,10 @@ const userSchema = new Schema(
 
 
 userSchema.pre("save" , async function(next){
-    if(!this.Modified("password")) return next();
+    if(!this.isModified("password")) return next();
     //password encryption just before code runs ...Data save hone se pahile use karo
-    this.password = bcrypt.hash(this.password , 10)
-    next()
+    this.password = await bcrypt.hash(this.password , 10)
+    
 })
 
 //we can eject/create our own methods...custom methods''''
