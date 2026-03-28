@@ -52,7 +52,7 @@ const userSchema = new Schema(
 
 
 userSchema.pre("save" , async function(next){
-    if(!this.isModified("password")) return next();
+    if(!this.isModified("password")) return;
     //password encryption just before code runs ...Data save hone se pahile use karo
     this.password = await bcrypt.hash(this.password , 10)
     

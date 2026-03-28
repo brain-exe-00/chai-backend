@@ -4,8 +4,6 @@ const asyncHandler = (requestHandler) => {
   };
 };
 
-
-
 export { asyncHandler };
 
 // const asyncHandler = () =>{}
@@ -22,8 +20,6 @@ export { asyncHandler };
                 message: error.message
             }))
         }
-
-
     }
 */
  /*
@@ -35,5 +31,4 @@ export { asyncHandler };
                 (err) => next(err)
             )
         */
-
     // Promise.resolve().catch()
